@@ -1,0 +1,87 @@
+#yarn设置源
+yarn config set registry http://npm.iwhalecloud.com:8081/repository/npm-all/ --global
+yarn config set registry https://registry.npm.taobao.org/ --global
+yarn config set registry https://registry.npmmirror.com/ --global
+
+yarn config get registry
+
+
+
+#npm设置源
+npm config set registry http://npm.iwhalecloud.com:8081/repository/npm-all/ --global
+npm config set registry https://registry.npm.taobao.org/
+npm config set registry https://registry.npmmirror.com/ --global
+
+npm config get registry 
+
+npm install --registry=https://registry.npm.taobao.org
+
+#npm 安装 yarn
+npm install yarn -g
+
+
+#yarn安装依赖(公司源)
+yarn install --registry http://npm.iwhalecloud.com:8081/repository/npm-all/
+#yarn安装依赖(淘宝源)
+yarn install --registry=https://registry.npm.taobao.org
+yarn install --registry=https://registry.npmmirror.com
+
+#npm查看本地依赖树
+npm list --depth=1
+
+#npm清理缓存
+npm cache clean --force
+
+#win10关闭 nginx 
+taskkill /im nginx.exe /f
+
+#代码检测
+#全局使用 如果想在全局使用 fishx lint 可以全局安装
+npm install -g @fishx/cli
+#检测指定目录下所有子目录中的 js 文件
+fishx lint --eslint /Users/qifutao/Documents/workspace/fishx-desktop-pro/src/**/*.js
+#支持指定相对路径进行检测
+fishx lint --eslint src/pages
+#对指定路径下的代码进行修复
+fishx lint --eslint --fix src/pages
+
+
+/* eslint-disable */
+
+package -am -pl fm-core-subscribe -f pom.xml
+
+#修改文件夹所有者
+chown jenkins.jenkins -R dist*
+
+chmod -R 777 -R /data*
+
+#查文件夹占用大小
+du -sh *
+
+#查看Linux系统打开的文件句柄数：
+lsof -n | awk '{print $2}'| sort | uniq -c | sort -nr 
+
+#查看指定进程的打开文件数
+lsof -p 57698 | wc -l
+
+git config --global user.name "0027016824"
+git config --global user.email "pan.taiyan2@iwhalecloud.com"
+
+
+#查看文件夹文件数量
+du -m --max-depth=1
+
+# 启动
+systemctl start jenkins
+# 关闭
+systemctl stop jenkins
+# 查看状态
+systemctl status jenkins
+# 自启
+systemctl enable jenkins
+# 关闭自启
+systemctl disable jenkins
+
+#nacos启动
+sh startup.sh -m standalone 
+
